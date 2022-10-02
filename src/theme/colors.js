@@ -1,0 +1,18 @@
+module.exports = {
+  elephant: '#0D2D3E',
+  white: '#FFFFFF',
+  brickRed: '#C53058',
+  persianRed: '#C53037',
+  heath: '#5B122C',
+  iron: '#E7E7E9',
+  bunker: '#0F131A',
+  abbey: '#474B52',
+  silver: '#C7C7C7',
+  wedgewood: '#3F7893',
+  rhino: '#24374D',
+  gray: '#8F8F8F',
+  tundora: '#404040',
+  shark: '#1B1F23',
+  mountainMeadow: '#1ECD97',
+  greenPea: '#1D6851',
+}
