@@ -63,6 +63,15 @@ export const ContentCol = styled(Col)`
   }
 `
 
+export const AdsCol = styled(Col)`
+  margin-top: 2rem;
+  @media (min-width: 768px) {
+    margin-top: 0rem;
+    padding-left: 2rem !important;
+    padding-right: 0 !important;
+  }
+`
+
 export const Headline = styled(Headline1)`
   margin: 0;
   margin-top: -0.7rem;
@@ -193,5 +202,25 @@ export const PostHeading = styled(Headline2)`
   &.heading_3 {
     font-size: 1.4rem;
     line-height: 1.4rem;
+  }
+`
+
+export const AdsContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  width: calc(100% - 2rem);
+  padding-left: 2rem;
+
+  img {
+    width: calc(100% - 2rem);
+  }
+
+  a {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  a:hover {
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
   }
 `
