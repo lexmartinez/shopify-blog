@@ -26,22 +26,23 @@ const FeaturedContent = props => {
     <ModuleContainer>
       <ModuleRow>
         <ImageCol xs={12}>
-          <LinkContainer cover to={props?.url} bg={colors.persianRed}>
+          <LinkContainer cover to={props?.url} bg={colors.woodland}>
             <Image image={image} />
           </LinkContainer>
         </ImageCol>
       </ModuleRow>
       <ModuleRow>
         <ContentCol xs={12}>
-          <FeaturedLabel>Featured Article</FeaturedLabel>
-          <LinkContainer cover to={props?.url} bg={colors.persianRed}>
+          <FeaturedLabel>Artículo Destacado</FeaturedLabel>
+          <LinkContainer cover to={props?.url} bg={colors.woodland}>
             <Headline>{props?.title}</Headline>
             <Description>{props?.description}</Description>
           </LinkContainer>
           <PostMetadata>
-            <MetadataField>{`${props?.date} - ${props?.time} ${
-              suffix[props?.type]
-            }`}</MetadataField>
+            <MetadataField>
+              <span>{props?.date}</span>
+              {` - ${props?.time} ${suffix[props?.type]}`}
+            </MetadataField>
             <TagsMetadataField>
               {(props?.tags || []).map((tag, index) => {
                 return (

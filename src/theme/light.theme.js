@@ -4,7 +4,7 @@ module.exports = {
   ...colors,
   primaryBG: colors.white,
   primaryHeading: colors.bunker,
-  primaryHeadingHover: colors.heath,
+  primaryHeadingHover: colors.woodland,
   primaryParagraph: colors.tundora,
   secondaryHeading: colors.bunker,
   secondaryParagraph: colors.abbey,

@@ -103,9 +103,10 @@ const ContentGrid = props => {
                     </ImageContainer>
                   </LinkContainer>
                   <PostMetadata>
-                    <MetadataField>{`${item?.date} - ${item?.time} ${
-                      suffix[item?.type]
-                    }`}</MetadataField>
+                    <MetadataField>
+                      <span>{item?.date}</span>
+                      {` - ${item?.time} ${suffix[item?.type]}`}
+                    </MetadataField>
                   </PostMetadata>
                   <LinkContainer to={item?.url} fade>
                     <Headline>{item?.title}</Headline>

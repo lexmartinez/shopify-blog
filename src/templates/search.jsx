@@ -16,7 +16,7 @@ const EmptyState = styled.div`
 `
 
 const Search = props => {
-  const { posts = [] } = props?.pageContext
+  const { posts = [], siteTitle } = props?.pageContext
   const params = new URLSearchParams(props?.location?.search)
   const term = params.get('q')
   const shuffled = posts.sort(() => 0.5 - Math.random())
@@ -34,16 +34,16 @@ const Search = props => {
 
   return (
     <PageContainer>
-      <Metadata titleTemplate={`Results for ${term} · %s`} />
+      <Metadata titleTemplate={`Búsqueda: ${term} · %s · ${siteTitle}`} />
       {!isEmpty(results) ? (
-        <ContentList items={results} title={`Results for ${term}`} searchMode={true} />
+        <ContentList items={results} title={`Búsqueda: ${term}`} searchMode={true} />
       ) : (
         <>
           <EmptyState>
-            <Headline2>{`No results found for ${term}`}</Headline2>
+            <Headline2>{`No hemos encontrado resultados para tu búsqueda: ${term}`}</Headline2>
           </EmptyState>
           <ContentGrid
-            title={'But this may interest you ...'}
+            title={'Pero esto podría interesarte ...'}
             target={'/articles/all'}
             items={shuffled.slice(0, 4)}
           />

@@ -12,8 +12,9 @@ import {
   FooterContainer,
   LogoIcon,
   TwitterIcon,
-  GithubIcon,
+  YoutubeIcon,
   MailIcon,
+  InstagramIcon,
   LogoLink,
 } from './styles'
 
@@ -23,32 +24,43 @@ const Footer = () => {
       <ModuleContainer>
         <FooterRow>
           <ContentCol>
-            <LogoLink to={'/'} cover bg={colors.persianRed} direction={'right'}>
+            <LogoLink to={'/'} cover bg={colors.woodland} direction={'right'}>
               <Logo>
                 <LogoIcon />
-                Red<strong>Knot</strong>
+                Guia<strong>Shopify</strong>
               </Logo>
             </LogoLink>
             <FooterData>
               <Hidden xs sm>
                 <FooterField>
-                  {'© Copyright 2021 '}
-                  <strong>{'redknot.io'}</strong>
-                  {' by Lex Martinez - All rights reserved'}
+                  {'© Copyright 2022 '}
+                  <strong>{'guiashopify.co'}</strong>
+                  {' - Todos los derechos reservados'}
                 </FooterField>
               </Hidden>
-              <FooterCTA href={'mailto:contact@redknot.io'}>
+              <FooterCTA href={'mailto:hola@guiashopify.co'}>
                 <MailIcon />
               </FooterCTA>
-              <FooterCTA href={'https://twitter.com/lex0316'} target={'_blank'} rel={'noreferrer'}>
-                <TwitterIcon />
-              </FooterCTA>
               <FooterCTA
-                href={'https://github.com/lexmartinez'}
+                href={'https://www.youtube.com/c/GuiaShopify'}
                 target={'_blank'}
                 rel={'noreferrer'}
               >
-                <GithubIcon />
+                <YoutubeIcon />
+              </FooterCTA>
+              <FooterCTA
+                href={'https://twitter.com/guiashopify'}
+                target={'_blank'}
+                rel={'noreferrer'}
+              >
+                <TwitterIcon />
+              </FooterCTA>
+              <FooterCTA
+                href={'https://instagram.com/guiashopify'}
+                target={'_blank'}
+                rel={'noreferrer'}
+              >
+                <InstagramIcon />
               </FooterCTA>
             </FooterData>
           </ContentCol>

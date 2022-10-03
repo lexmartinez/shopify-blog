@@ -2,11 +2,14 @@ require('dotenv').config({ path: '.env' })
 
 module.exports = {
   siteMetadata: {
-    title: 'The Redknot',
-    description: 'A place to discover interesting stuff, one knot at time',
-    url: 'https://www.redknot.io',
+    title: 'Guía Shopify',
+    description:
+      'Guía Shopify es un blog especializado en Shopify, donde encontrarás tips y tutoriales que te ayudaran a llevar tu tienda online a otro nivel',
+    url: 'https://www.guiashopify.co',
+    siteUrl: 'https://www.guiashopify.co',
     image: '/favicon.png',
     twitterUsername: '@lex0316',
+    shortDescription: 'Blog especializado en Shopify con infinidad de tips y tutoriales',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -15,11 +18,13 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-transition-link',
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-styled-components-dark-mode',
       options: {
         light: require('./src/theme/index.js').lightTheme,
-        dark: require('./src/theme/index.js').darkTheme,
+        //dark: require('./src/theme/index.js').darkTheme,
       },
     },
     {
@@ -52,6 +57,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-scroll-indicator`,
+      options: {
+        color: '#017556',
+        height: '4px',
+        paths: ['/articles/**'],
+      },
+    },
+    {
       resolve: 'gatsby-source-notion-api',
       options: {
         token: process.env.NOTION_API_KEY,
@@ -63,11 +76,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'The Redknot',
-        short_name: 'The Redknot',
+        name: 'Guia Shopify',
+        short_name: 'Guia Shopify',
         start_url: '/',
         background_color: '#f7f0eb',
-        theme_color: '#C53037',
+        theme_color: '#017556',
         display: 'standalone',
         icon: 'static/favicon.png',
       },

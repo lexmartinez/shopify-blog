@@ -15,6 +15,12 @@ const EmptyState = styled.div`
 const NotFound = props => {
   const data = useStaticQuery(graphql`
     query NotFound {
+      site {
+        siteMetadata {
+          title
+          shortDescription
+        }
+      }
       allPost {
         edges {
           node {
@@ -45,14 +51,16 @@ const NotFound = props => {
     .filter(({ published }) => published)
     .sort(() => 0.5 - Math.random())
 
+  const siteTitle = data?.site?.siteMetadata?.title
+  const shortDescription = data?.site?.siteMetadata?.shortDescription
   return (
     <PageContainer>
-      <Metadata />
+      <Metadata title={`${siteTitle} · ${shortDescription}`} />
       <EmptyState>
-        <Headline2>{"Sorry, we can't tie that knot"}</Headline2>
+        <Headline2>{'Vaya! No hemos encontrado la página que buscas.'}</Headline2>
       </EmptyState>
       <ContentGrid
-        title={'But this may interest you ...'}
+        title={'Pero esto puede interesarte ...'}
         target={'/articles/all'}
         items={posts.slice(0, 4)}
       />

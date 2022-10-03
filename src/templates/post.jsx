@@ -7,7 +7,7 @@ const PostTemplate = ({ pageContext }) => {
     <PageContainer>
       <Metadata
         article={true}
-        title={post?.title}
+        title={`${post?.title} · ${pageContext?.siteTitle}`}
         description={post?.description}
         image={post?.rawImage}
       />

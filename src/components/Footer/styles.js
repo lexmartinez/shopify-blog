@@ -2,10 +2,11 @@ import styled from 'styled-components'
 import { Container, Row, Col } from 'react-grid-system'
 import { Paragraph3, Paragraph1 } from '@components/Typography'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import LogoSvg from '@assets/knot.svg'
+import LogoSvg from '@assets/shopping-bag.svg'
 import MailSvg from '@assets/mail.svg'
 import TwitterSvg from '@assets/twitter.svg'
-import GithubSvg from '@assets/github.svg'
+import InstagramSvg from '@assets/instagram.svg'
+import YoutubeSvg from '@assets/youtube.svg'
 
 export const FooterContainer = styled.div`
   background-color: ${({ theme }) => theme.footerBG}80;
@@ -51,7 +52,7 @@ export const FooterField = styled(Paragraph3)`
 `
 
 export const Logo = styled(Paragraph1)`
-  color: ${props => props.theme.persianRed};
+  color: ${props => props.theme.woodland};
   margin: 0;
   display: flex;
   align-items: center;
@@ -68,12 +69,17 @@ export const FooterCTA = styled.a`
 `
 
 export const LogoIcon = styled(LogoSvg)`
-  width: 2rem;
-  height: 2rem;
+  width: 1.4rem;
+  height: 1.4rem;
   margin-right: 0.5rem;
 `
 
 export const TwitterIcon = styled(TwitterSvg)`
+  width: 1rem;
+  height: 1rem;
+`
+
+export const InstagramIcon = styled(InstagramSvg)`
   width: 1rem;
   height: 1rem;
 `
@@ -83,7 +89,7 @@ export const MailIcon = styled(MailSvg)`
   height: 1rem;
 `
 
-export const GithubIcon = styled(GithubSvg)`
+export const YoutubeIcon = styled(YoutubeSvg)`
   width: 1rem;
   height: 1rem;
 `

@@ -40,7 +40,7 @@ const Share = ({ title, description }) => {
     <MainContainer>
       {items.map(({ icon: Icon, button: Button, props = {} }) => (
         <Button url={url} {...props}>
-          <Icon size={32} />
+          <Icon size={32} style={{ borderRadius: '50%', marginLeft: '0.5rem' }} />
         </Button>
       ))}
     </MainContainer>

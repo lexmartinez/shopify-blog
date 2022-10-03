@@ -18,7 +18,7 @@ const SEO = ({ title, description, image, article, titleTemplate }) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang: 'en',
+        lang: 'es',
       }}
       title={seo.title}
       titleTemplate={titleTemplate}

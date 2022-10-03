@@ -61,6 +61,10 @@ export const MetadataField = styled(Paragraph3)`
   margin: 0;
   font-size: 0.8rem;
   line-height: 1rem;
+
+  span {
+    text-transform: capitalize;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -137,7 +141,7 @@ export const TagsMetadataField = styled.div`
 export const Tag = styled(MetadataField)`
   padding: 0.3rem 0.5rem;
   padding-left: 0;
-  color: ${props => props.theme.persianRed};
+  color: ${props => props.theme.woodland};
   font-weight: 400;
 
   &:hover {

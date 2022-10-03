@@ -15,4 +15,8 @@ module.exports = {
   shark: '#1B1F23',
   mountainMeadow: '#1ECD97',
   greenPea: '#1D6851',
+  //LOREM
+  woodland: '#017556',
+  sushi: '#95BF47',
+  deepTeal: '#002d2d',
 }

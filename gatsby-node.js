@@ -1,11 +1,13 @@
 const path = require('path')
 const axios = require('axios')
 const dayjs = require('dayjs')
+require('dayjs/locale/es')
 const uniq = require('lodash/uniq')
 const capitalize = require('lodash/capitalize')
 const isArray = require('lodash/isArray')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const customParseFormat = require('dayjs/plugin/customParseFormat')
+dayjs.locale('es')
 dayjs.extend(customParseFormat)
 
 axios.defaults.baseURL = 'https://api.notion.com/v1/'
@@ -44,6 +46,7 @@ exports.onCreateNode = async ({
     const post = {
       id,
       published: !!properties?.published?.checkbox,
+      featured: !!properties?.featured?.checkbox,
       slug: properties?.slug?.rich_text,
       time: properties?.time?.rich_text,
       description: properties?.description?.rich_text,
@@ -125,6 +128,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const queryResults = await graphql(`
     query AllPosts {
+      site {
+        siteMetadata {
+          title
+          shortDescription
+        }
+      }
       allPost {
         edges {
           node {
@@ -133,6 +142,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             postId
             published
+            featured
             rawDate
             rawImage
             slug
@@ -169,6 +179,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
+  const siteTitle = queryResults?.data?.site?.siteMetadata?.title
+  const shortDescription = queryResults?.data?.site?.siteMetadata?.shortDescription
   const posts = (queryResults?.data?.allPost?.edges || [])
     .map(({ node }) => node)
     .filter(({ published }) => published)
@@ -185,6 +197,8 @@ exports.createPages = async ({ graphql, actions }) => {
     component: homeTemplate,
     context: {
       posts,
+      siteTitle,
+      shortDescription,
     },
   })
 
@@ -193,6 +207,7 @@ exports.createPages = async ({ graphql, actions }) => {
     component: searchTemplate,
     context: {
       posts,
+      siteTitle,
     },
   })
 
@@ -202,6 +217,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: postTemplate,
       context: {
         post,
+        siteTitle,
       },
     })
   }
@@ -213,6 +229,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         tag,
         posts: posts.filter(({ tags }) => tags.indexOf(tag) !== -1),
+        siteTitle,
       },
     })
   }
@@ -224,6 +241,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         tag: `all-${capitalize(type)}s`,
         posts: posts.filter(({ type: postType }) => type === postType),
+        siteTitle,
       },
     })
   }

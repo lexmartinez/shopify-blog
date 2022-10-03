@@ -21,6 +21,7 @@ import {
   LoadMoreButton,
   ButtonCol,
   Tag,
+  ListContainer,
 } from './styles'
 
 const PER_PAGE_ITEMS = 4
@@ -47,51 +48,54 @@ const ContentList = props => {
           top={props.searchMode ? '3rem' : '0'}
           results={
             props?.searchMode
-              ? `Showing ${items.length} results of ${(props?.items || []).length}`
+              ? `Resultados ${items.length} de ${(props?.items || []).length}`
               : undefined
           }
         />
       )}
-      {(items || []).map((item, index) => {
-        const image = getImage(item?.image)
-        return (
-          <CardContainer key={index}>
-            <ItemRow>
-              <ImageCol xs={12} md={4} lg={2} offset={{ lg: 0.5 }}>
-                <LinkContainer to={item?.url} fade>
-                  <ImageContainer>
-                    <Image image={image} />
-                  </ImageContainer>
-                </LinkContainer>
-              </ImageCol>
-              <ContentCol xs={12} md={7.5} lg={8} offset={{ md: 0.5 }}>
-                <LinkContainer to={item?.url} fade>
-                  <Headline>{item?.title}</Headline>
-                  <Description>{item?.description}</Description>
-                </LinkContainer>
-                <PostMetadata>
-                  <MetadataField>{`${item?.date} - ${item?.time} ${
-                    suffix[item?.type]
-                  }`}</MetadataField>
-                  <TagsMetadataField>
-                    {(item?.tags || []).map((tag, index) => {
-                      return (
-                        <LinkContainer to={`/tags/${tag}`} key={index}>
-                          <Tag>{`#${tagCase(tag)}`}</Tag>
-                        </LinkContainer>
-                      )
-                    })}
-                  </TagsMetadataField>
-                </PostMetadata>
-              </ContentCol>
-            </ItemRow>
-          </CardContainer>
-        )
-      })}
+      <ListContainer>
+        {(items || []).map((item, index) => {
+          const image = getImage(item?.image)
+          return (
+            <CardContainer key={index}>
+              <ItemRow>
+                <ImageCol xs={12} md={6} lg={3}>
+                  <LinkContainer to={item?.url} fade>
+                    <ImageContainer>
+                      <Image image={image} />
+                    </ImageContainer>
+                  </LinkContainer>
+                </ImageCol>
+                <ContentCol xs={12} md={7.5} lg={8} offset={{ md: 0.5 }}>
+                  <LinkContainer to={item?.url} fade>
+                    <Headline>{item?.title}</Headline>
+                    <Description>{item?.description}</Description>
+                  </LinkContainer>
+                  <PostMetadata>
+                    <MetadataField>
+                      <span>{item?.date}</span>
+                      {` - ${item?.time} ${suffix[item?.type]}`}
+                    </MetadataField>
+                    <TagsMetadataField>
+                      {(item?.tags || []).map((tag, index) => {
+                        return (
+                          <LinkContainer to={`/tags/${tag}`} key={index}>
+                            <Tag>{`#${tagCase(tag)}`}</Tag>
+                          </LinkContainer>
+                        )
+                      })}
+                    </TagsMetadataField>
+                  </PostMetadata>
+                </ContentCol>
+              </ItemRow>
+            </CardContainer>
+          )
+        })}
+      </ListContainer>
       {showLoadMore && (
         <ItemRow>
           <ButtonCol>
-            <LoadMoreButton onClick={onLoadMore}>Show more</LoadMoreButton>
+            <LoadMoreButton onClick={onLoadMore}>Ver m&aacute;s</LoadMoreButton>
           </ButtonCol>
         </ItemRow>
       )}

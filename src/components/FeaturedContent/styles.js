@@ -63,7 +63,7 @@ export const Description = styled(Paragraph1)`
 
 export const FeaturedLabel = styled(Paragraph2)`
   margin-top: 1.5rem;
-  color: ${props => props.theme.persianRed};
+  color: ${props => props.theme.woodland};
   font-weight: 500;
 `
 
@@ -84,6 +84,10 @@ export const MetadataField = styled(Paragraph2)`
   margin: 0;
   font-size: 0.8rem;
   line-height: 1rem;
+
+  span {
+    text-transform: capitalize;
+  }
 `
 
 export const TagsMetadataField = styled.div`
@@ -100,7 +104,7 @@ export const TagsMetadataField = styled.div`
 
 export const Tag = styled(MetadataField)`
   padding: 0.3rem 0.5rem;
-  color: ${props => props.theme.persianRed};
+  color: ${props => props.theme.woodland};
   font-weight: 400;
   padding-left: 0;
 

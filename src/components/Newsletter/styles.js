@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-grid-system'
 import { Headline3, Paragraph2, InputStyles, SecondaryCTAStyles } from '@components/Typography'
 import CheckSvg from '@assets/check.svg'
 import LoaderSvg from '@assets/loader.svg'
+import colors from '@theme/colors'
 
 const fadeIn = keyframes`
   0% {
@@ -98,19 +99,19 @@ export const Button = styled.button`
   ${SecondaryCTAStyles}
   font-weight: 400;
   padding: 1rem 2rem;
-  border: 0px solid ${props => props.theme.persianRed};
+  border: 0px solid ${colors.woodland};
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  background-color: ${props => props.theme.persianRed};
+  background-color: ${colors.woodland};
   border-radius: 2px;
   color: ${props => props.theme.white};
   transition: all 0.25s ease;
 
   &:hover {
-    background-color: ${props => props.theme.persianRed}E6;
+    background-color: ${colors.woodland}E6;
     color: ${props => props.theme.white};
   }
   margin-top: 1rem;
@@ -121,8 +122,9 @@ export const Button = styled.button`
   }
 
   &.completed {
-    background-color: ${props => props.theme.greenPea};
-    border: 0px solid ${props => props.theme.greenPea};
+    background-color: ${colors.sushi};
+    border: 0px solid ${colors.sushi};
+    color: ${colors.woodland};
     animation: 1s ${fadeIn} ease-out;
   }
 `

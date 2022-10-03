@@ -39,10 +39,10 @@ const Newsletter = () => {
       <ModuleContainer>
         <ContentRow>
           <ContentCol offset={{ md: 2 }} md={8}>
-            <Headline>{"Let's stay in touch!"}</Headline>
+            <Headline>{'¡Únete a nuestra newsletter!'}</Headline>
             <Description>
               {
-                'Subscribe to our newsletter and get the latest articles and tutorials straight to your inbox. No spam, just relevant content, pinky promise.'
+                'Únete a nuestra comunidad y recibe notificaciones con los artículos y tutoriales más recientes en tu correo electrónico. Nada de spam, solo contenido relevante, lo prometemos.'
               }
             </Description>
             <Form onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ const Newsletter = () => {
                   name={'email'}
                   autoComplete={'email'}
                   variant={'outlined'}
-                  placeholder={'Your E-mail'}
+                  placeholder={'Correo Electrónico'}
                   onChange={e => setEmail(e.target.value)}
                 />
                 <Button
@@ -64,7 +64,7 @@ const Newsletter = () => {
                   type={'submit'}
                   disabled={!!result?.result || !email}
                 >
-                  {!result ? 'Subscribe' : !!result?.result ? <CheckIcon /> : <LoaderIcon />}
+                  {!result ? 'Unirse' : !!result?.result ? <CheckIcon /> : <LoaderIcon />}
                 </Button>
               </FormContainer>
             </Form>

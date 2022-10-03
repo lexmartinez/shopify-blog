@@ -4,7 +4,8 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import { contentSettings } from '@config'
 import { tagCase } from '@utils/format'
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import Share from '../Share'
+
+// import Share from '../Share'
 import {
   ModuleContainer,
   ModuleRow,
@@ -36,9 +37,10 @@ const Post = props => {
             <Headline>{props?.title}</Headline>
             <Description>{props?.description}</Description>
             <PostMetadata>
-              <MetadataField>{`${props?.date} - ${props?.time} ${
-                suffix[props?.type]
-              }`}</MetadataField>
+              <MetadataField>
+                <span>{props?.date}</span>
+                {` - ${props?.time} ${suffix[props?.type]}`}
+              </MetadataField>
               <TagsMetadataField>
                 {(props?.tags || []).map((tag, index) => {
                   return (
@@ -50,7 +52,7 @@ const Post = props => {
               </TagsMetadataField>
             </PostMetadata>
           </>
-          <Share title={props?.title} description={props?.description} />
+          {/*<Share title={props?.title} description={props?.description} />*/}
         </ContentCol>
       </ModuleRow>
       <ModuleRow>

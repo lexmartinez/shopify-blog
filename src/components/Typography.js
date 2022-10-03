@@ -29,12 +29,16 @@ export const Headline3 = styled.h3`
   color: ${props => props.theme.primaryHeading};
 `
 
-export const Paragraph1 = styled.p`
+export const Paragraph1Styles = css`
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.5;
   font-weight: 300;
   color: ${props => props.theme.primaryParagraph};
+`
+
+export const Paragraph1 = styled.p`
+  ${Paragraph1Styles}
 `
 
 export const CodeParagraph1 = styled.p`

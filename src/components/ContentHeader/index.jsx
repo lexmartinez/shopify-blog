@@ -12,8 +12,8 @@ const ContentHeader = props => {
       {!!props?.target && !props?.results && (
         <Hidden xs sm>
           <CTACol md={2}>
-            <HeadingCTA cover to={props?.target} bg={colors.persianRed}>
-              View all
+            <HeadingCTA cover to={props?.target} bg={colors.woodland}>
+              Ver todos
             </HeadingCTA>
           </CTACol>
         </Hidden>

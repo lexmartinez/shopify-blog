@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components'
 import { Container, Row, Col } from 'react-grid-system'
 import { Paragraph3, Paragraph1, Headline3, CTAStyles } from '@components/Typography'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import LogoSVG from '@assets/knot.svg'
+import LogoSVG from '@assets/shopping-bag.svg'
 
 const fadeIn = keyframes`
   0% {
@@ -31,7 +31,7 @@ export const ModuleContainer = styled(Container)`
   padding: 1rem 2rem !important;
 
   @media (min-width: 768px) {
-    padding: 1rem 5rem !important;
+    padding: 1rem 0rem !important;
   }
 `
 
@@ -57,7 +57,7 @@ export const NavBarData = styled.div`
 export const NavBarField = styled(Paragraph3)``
 
 export const Logo = styled(Paragraph1)`
-  color: ${props => props.theme.persianRed};
+  color: ${props => props.theme.woodland};
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 0;
@@ -70,7 +70,7 @@ export const NavBarCTA = styled(Paragraph3)`
   margin-left: 2rem;
 
   &:hover {
-    color: ${props => props.theme.persianRed};
+    color: ${props => props.theme.woodland};
   }
 `
 
@@ -118,7 +118,7 @@ export const SearchInput = styled.input`
 `
 
 export const LogoIcon = styled(LogoSVG)`
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
   margin-right: 0.5rem;
 `

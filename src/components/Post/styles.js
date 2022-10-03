@@ -7,7 +7,7 @@ import {
   Paragraph2,
   CodeSnippetStyles,
   Headline2,
-  Paragraph2Styles,
+  Paragraph1Styles,
 } from '@components/Typography'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
@@ -74,11 +74,12 @@ export const Headline = styled(Headline1)`
 
 export const Description = styled(Paragraph1)`
   margin-top: 1rem;
+  font-weight: 500;
 `
 
 export const FeaturedLabel = styled(Paragraph2)`
   margin-top: 1.5rem;
-  color: ${props => props.theme.persianRed};
+  color: ${props => props.theme.woodland};
   font-weight: 500;
 `
 
@@ -100,6 +101,10 @@ export const MetadataField = styled(Paragraph2)`
   margin: 0;
   font-size: 0.8rem;
   line-height: 1rem;
+
+  span {
+    text-transform: capitalize;
+  }
 `
 
 export const TagsMetadataField = styled.div`
@@ -116,7 +121,7 @@ export const TagsMetadataField = styled.div`
 
 export const Tag = styled(MetadataField)`
   padding: 0.3rem 0.5rem;
-  color: ${props => props.theme.persianRed};
+  color: ${props => props.theme.woodland};
   font-weight: 400;
   padding-left: 0;
 
@@ -150,7 +155,7 @@ const RichTextStyles = css`
     }
   }
   a {
-    color: ${props => props.theme.persianRed};
+    color: ${props => props.theme.woodland};
     &:hover {
       color: ${props => props.theme.primaryHeadingHover};
     }
@@ -158,12 +163,12 @@ const RichTextStyles = css`
 `
 
 export const PostParagraph = styled.p`
-  ${Paragraph2Styles}
+  ${Paragraph1Styles}
   ${RichTextStyles}
 `
 
 export const PostBulletedItem = styled.li`
-  ${Paragraph2Styles}
+  ${Paragraph1Styles}
   ${RichTextStyles}
   margin-bottom: 0.5rem;
 `
