@@ -28,14 +28,16 @@ const Home = ({ pageContext }) => {
       <FeaturedContent {...featured} />
       {/* TODO: WHEN CONTENT IS ENOUGTH ENABLE CONTENT GRID WITH SOME SELECTION] */}
       {/*<ContentGrid title={"Today's trending"} items={posts} />*/}
-      <ContentList
-        title={'Artículos Recientes'}
-        target={'/articles/all'}
-        items={take(
-          posts.filter(({ featured }) => !featured),
-          4
-        )}
-      />
+      {posts.length > 1 && (
+        <ContentList
+          title={'Artículos & Tutoriales'}
+          target={'/articles/all'}
+          items={take(
+            posts.filter(({ featured }) => !featured),
+            4
+          )}
+        />
+      )}
       <Newsletter />
     </PageContainer>
   )

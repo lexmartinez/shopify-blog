@@ -11,10 +11,10 @@ import {
   FooterCTA,
   FooterContainer,
   LogoIcon,
-  TwitterIcon,
-  YoutubeIcon,
+  //TwitterIcon,
+  //YoutubeIcon,
   MailIcon,
-  InstagramIcon,
+  //InstagramIcon,
   LogoLink,
 } from './styles'
 
@@ -27,21 +27,21 @@ const Footer = () => {
             <LogoLink to={'/'} cover bg={colors.woodland} direction={'right'}>
               <Logo>
                 <LogoIcon />
-                Guia<strong>Shopify</strong>
+                Gu&iacute;a<strong>Shopy</strong>
               </Logo>
             </LogoLink>
             <FooterData>
               <Hidden xs sm>
                 <FooterField>
                   {'© Copyright 2022 '}
-                  <strong>{'guiashopify.co'}</strong>
+                  <strong>{'guiashopy.com'}</strong>
                   {' - Todos los derechos reservados'}
                 </FooterField>
               </Hidden>
-              <FooterCTA href={'mailto:hola@guiashopify.co'}>
+              <FooterCTA href={'mailto:hola@guiashopy.com'}>
                 <MailIcon />
               </FooterCTA>
-              <FooterCTA
+              {/*<FooterCTA
                 href={'https://www.youtube.com/c/GuiaShopify'}
                 target={'_blank'}
                 rel={'noreferrer'}
@@ -61,7 +61,7 @@ const Footer = () => {
                 rel={'noreferrer'}
               >
                 <InstagramIcon />
-              </FooterCTA>
+              </FooterCTA>*/}
             </FooterData>
           </ContentCol>
         </FooterRow>

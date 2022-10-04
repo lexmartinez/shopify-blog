@@ -2,14 +2,14 @@ require('dotenv').config({ path: '.env' })
 
 module.exports = {
   siteMetadata: {
-    title: 'Guía Shopify',
+    title: 'Guía Shopy',
     description:
-      'Guía Shopify es un blog especializado en Shopify, donde encontrarás tips y tutoriales que te ayudaran a llevar tu tienda online a otro nivel',
-    url: 'https://www.guiashopify.co',
-    siteUrl: 'https://www.guiashopify.co',
+      'Somos un blog especializado en Shopify, te ofrecemos un gran conjunto de artículos, tips y tutoriales en español que te ayudaran a construir & llevar tu tienda online a otro nivel',
+    url: 'https://www.guiashopy.com',
+    siteUrl: 'https://www.guiashopy.com',
     image: '/favicon.png',
-    twitterUsername: '@lex0316',
-    shortDescription: 'Blog especializado en Shopify con infinidad de tips y tutoriales',
+    twitterUsername: '@guiashopy',
+    shortDescription: 'Blog en español especializado en Shopify',
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -76,8 +76,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Guia Shopify',
-        short_name: 'Guia Shopify',
+        name: 'Guía Shopy',
+        short_name: 'Guía Shopy',
         start_url: '/',
         background_color: '#f7f0eb',
         theme_color: '#017556',

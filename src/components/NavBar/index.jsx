@@ -55,7 +55,7 @@ const NavBar = () => {
               <LogoLink to={'/'} cover bg={colors.woodland} direction={'right'}>
                 <Logo>
                   <LogoIcon />
-                  Guia<strong>Shopify</strong>
+                  Gu&iacute;a<strong>Shopy</strong>
                 </Logo>
               </LogoLink>
               <NavBarData>
@@ -75,7 +75,7 @@ const NavBar = () => {
           <ModuleContainer>
             <NavBarRow>
               <SearchCol>
-                <Headline>{'Que vamos a aprender hoy?'}</Headline>
+                <Headline>{'Que te gustaría encontrar?'}</Headline>
                 <SearchInputContainer>
                   <SearchInput
                     onChange={evt => setSearch(evt.target.value)}
