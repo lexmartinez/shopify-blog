@@ -59,14 +59,14 @@ const ContentList = props => {
           return (
             <CardContainer key={index}>
               <ItemRow>
-                <ImageCol xs={12} md={6} lg={3}>
+                <ImageCol xs={12} lg={3}>
                   <LinkContainer to={item?.url} fade>
                     <ImageContainer>
                       <Image image={image} />
                     </ImageContainer>
                   </LinkContainer>
                 </ImageCol>
-                <ContentCol xs={12} md={7.5} lg={8} offset={{ md: 0.5 }}>
+                <ContentCol xs={12} lg={8} offset={{ lg: 0.5 }}>
                   <LinkContainer to={item?.url} fade>
                     <Headline>{item?.title}</Headline>
                     <Description>{item?.description}</Description>

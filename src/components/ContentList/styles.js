@@ -36,7 +36,7 @@ export const Headline = styled(Headline3)`
   margin: 0;
   line-height: 1.2;
   margin-top: 1rem;
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     margin-top: 0;
   }
   &:hover {
