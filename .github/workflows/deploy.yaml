@@ -25,8 +25,11 @@ jobs:
       - name: 🧩  Install Gatsby CLI
         run: npm install -g gatsby-cli
 
+      - name: 🧩  Install Yarn
+        run: npm install -g yarn
+
       - name: 🧩  Install Project Dependencies
-        run: npm install
+        run: yarn install
 
       - name: 🔑  Set environment variables
         uses: allenevans/set-env@v2.0.0
@@ -36,7 +39,7 @@ jobs:
           NOTION_DATABASE: ${{ secrets.NOTION_DATABASE }}
 
       - name: 🛠  Build
-        run: gatsby build
+        run: yarn build
 
       - name: 🔎  Verify build
         run: ls -la public
