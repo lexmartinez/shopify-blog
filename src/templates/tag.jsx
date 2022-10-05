@@ -3,13 +3,13 @@ import { PageContainer, LandingHero, ContentList, Newsletter, Metadata } from '@
 import { tagCase } from '@utils/format'
 
 const Tag = ({ pageContext }) => {
-  const { posts = [], tag, siteTitle } = pageContext
+  const { posts = [], tag, title, siteTitle } = pageContext
   return (
-    <PageContainer>
-      <Metadata titleTemplate={`${tagCase(tag)} · %s · ${siteTitle}`} />
+    <PageContainer breadcrumbs={title ? [{ label: title }] : []}>
+      <Metadata titleTemplate={`${title || tagCase(tag)} · %s · ${siteTitle}`} />
       <LandingHero
         backgroundImage={`https://picsum.photos/seed/${tag}/1024/768`}
-        title={tagCase(tag)}
+        title={title || tagCase(tag)}
         type={'tag'}
       />
       <ContentList items={posts} />

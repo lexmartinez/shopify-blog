@@ -8,7 +8,7 @@ const PageContainer = props => {
     <>
       <Body />
       <Container>
-        <NavBar />
+        <NavBar breadcrumbs={props.breadcrumbs || []} />
         {props?.children}
         <Footer />
       </Container>

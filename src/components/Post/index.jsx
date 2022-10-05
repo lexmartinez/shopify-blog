@@ -11,7 +11,6 @@ import {
   ModuleRow,
   ImageCol,
   ContentCol,
-  AdsCol,
   Image,
   Headline,
   Description,
@@ -25,10 +24,7 @@ import {
   BlockImage,
   PostHeading,
   PostBulletedItem,
-  AdsContainer,
 } from './styles'
-
-const USE_ADS = false
 
 const Post = props => {
   const { suffix } = contentSettings
@@ -36,7 +32,7 @@ const Post = props => {
   return (
     <ModuleContainer>
       <ModuleRow>
-        <ContentCol xs={12} lg={USE_ADS ? 9 : 12}>
+        <ContentCol xs={12}>
           <ModuleRow>
             <ContentCol xs={12}>
               <>
@@ -122,15 +118,6 @@ const Post = props => {
             </ContentCol>
           </ModuleRow>
         </ContentCol>
-        {USE_ADS && (
-          <AdsCol xs={12} lg={3}>
-            <AdsContainer>
-              <a href={'https://shopify.com'}>
-                <img src={'/shopify-banner-portrait.png'} alt={'shopify ad'} />
-              </a>
-            </AdsContainer>
-          </AdsCol>
-        )}
       </ModuleRow>
     </ModuleContainer>
   )

@@ -1,6 +1,12 @@
 import styled, { keyframes } from 'styled-components'
 import { Container, Row, Col } from 'react-grid-system'
-import { Paragraph3, Paragraph1, Headline3, CTAStyles } from '@components/Typography'
+import {
+  Paragraph3,
+  Paragraph1,
+  Headline3,
+  Paragraph3Styles,
+  CTAStyles,
+} from '@components/Typography'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import LogoSVG from '@assets/shopping-bag.svg'
 
@@ -121,4 +127,33 @@ export const LogoIcon = styled(LogoSVG)`
   width: 1.4rem;
   height: 1.4rem;
   margin-right: 0.5rem;
+`
+
+export const Breadcrumb = styled.ul`
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  ${Paragraph3Styles}
+  color: ${({ theme }) => theme.gray} !important;
+
+  opacity: 0.8;
+
+  li {
+    display: inline;
+    & + li:before {
+      content: '/';
+      padding: 0 0.5rem;
+    }
+  }
+`
+
+export const BreadcrumbLink = styled(AniLink)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.greenPea} !important;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    color: ${({ theme }) => theme.greenPea} !important;
+    text-decoration: underline;
+  }
 `

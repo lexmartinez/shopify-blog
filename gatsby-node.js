@@ -124,6 +124,10 @@ exports.onCreateNode = async ({
   }
 }
 
+const typeLabels = {
+  article: 'Artículos & Tutoriales',
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const queryResults = await graphql(`
@@ -240,6 +244,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: tagTemplate,
       context: {
         tag: `all-${capitalize(type)}s`,
+        title: typeLabels[type],
         posts: posts.filter(({ type: postType }) => type === postType),
         siteTitle,
       },

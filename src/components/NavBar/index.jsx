@@ -6,6 +6,7 @@ import SearchIcon from '@assets/search.svg'
 import CloseIcon from '@assets/x.svg'
 // import SunIcon from '@assets/sun.svg'
 // import MoonIcon from '@assets/moon.svg'
+import { Visible } from 'react-grid-system'
 import {
   ModuleContainer,
   Logo,
@@ -21,9 +22,11 @@ import {
   Headline,
   SearchInputContainer,
   LogoIcon,
+  Breadcrumb,
+  BreadcrumbLink,
 } from './styles'
 
-const NavBar = () => {
+const NavBar = ({ breadcrumbs = [] }) => {
   //const { isDark, toggleDark } = useStyledDarkMode()
   const [solid, setSolid] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -41,10 +44,15 @@ const NavBar = () => {
 
   const onSearch = () => {
     setMenuOpen(false)
+    document.body.style.overflow = 'unset'
     if (!!search) {
       navigate(`/search?q=${search}`)
     }
   }
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : 'unset'
+  }, [menuOpen])
 
   return (
     <>
@@ -68,6 +76,31 @@ const NavBar = () => {
               </NavBarData>
             </ContentCol>
           </NavBarRow>
+          <Visible md lg xl xxl xxxl>
+            {breadcrumbs.length > 0 && !menuOpen && (
+              <NavBarRow>
+                <Breadcrumb>
+                  <li>
+                    <BreadcrumbLink to={'/'} cover bg={colors.woodland} direction={'right'}>
+                      Inicio
+                    </BreadcrumbLink>
+                  </li>
+                  {breadcrumbs.map(({ label, target }) => {
+                    if (!target) {
+                      return <li>{label}</li>
+                    }
+                    return (
+                      <li>
+                        <BreadcrumbLink to={target} cover bg={colors.woodland} direction={'right'}>
+                          {label}
+                        </BreadcrumbLink>
+                      </li>
+                    )
+                  })}
+                </Breadcrumb>
+              </NavBarRow>
+            )}
+          </Visible>
         </ModuleContainer>
       </NavBarContainer>
       {menuOpen && (

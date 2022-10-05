@@ -61,12 +61,16 @@ export const Paragraph2 = styled.p`
   ${Paragraph2Styles}
 `
 
-export const Paragraph3 = styled.p`
+export const Paragraph3Styles = css`
   font-family: 'Roboto', sans-serif;
   font-size: 0.8rem;
   line-height: 1;
   font-weight: 300;
   color: ${props => props.theme.secondaryParagraph};
+`
+
+export const Paragraph3 = styled.p`
+  ${Paragraph3Styles}
 `
 
 export const CodeParagraph3 = styled.p`

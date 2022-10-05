@@ -22,7 +22,7 @@ export const ModuleContainer = styled(Container)`
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 5rem;
-  padding-top: 5rem;
+  padding-top: 4rem;
 `
 
 export const Image = styled(GatsbyImage)`
@@ -60,15 +60,6 @@ export const ContentCol = styled(Col)`
     padding: 1.3rem !important;
     border-radius: 0.2rem;
     margin: 2rem 0;
-  }
-`
-
-export const AdsCol = styled(Col)`
-  margin-top: 2rem;
-  @media (min-width: 768px) {
-    margin-top: 0rem;
-    padding-left: 2rem !important;
-    padding-right: 0 !important;
   }
 `
 
@@ -202,25 +193,5 @@ export const PostHeading = styled(Headline2)`
   &.heading_3 {
     font-size: 1.4rem;
     line-height: 1.4rem;
-  }
-`
-
-export const AdsContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  width: calc(100% - 2rem);
-  padding-left: 2rem;
-
-  img {
-    width: calc(100% - 2rem);
-  }
-
-  a {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-  }
-  a:hover {
-    opacity: 0.9;
-    transition: opacity 0.5s ease;
   }
 `
