@@ -37,6 +37,7 @@ jobs:
           MAILCHIMP_ENDPOINT: ${{ secrets.MAILCHIMP_ENDPOINT }}
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE: ${{ secrets.NOTION_DATABASE }}
+          GA_MEASURE_ID: ${{ secrets.GA_MEASURE_ID }}
 
       - name: 🛠  Build
         run: yarn build
